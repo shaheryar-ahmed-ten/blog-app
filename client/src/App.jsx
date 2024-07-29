@@ -9,6 +9,7 @@ import SignIn from './pages/SignIn'
 import SignOut from './pages/SignOut'
 import Dashboard from './pages/Dashboard'
 import About from './pages/About'
+import Header from './components/Header'
 
 function App() {
   const [count, setCount] = useState(0)
