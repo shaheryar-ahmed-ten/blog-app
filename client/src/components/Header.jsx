@@ -12,7 +12,9 @@ export default function Header() {
       <Navbar.Toggle />
 
       <Link to='/'>
-        <span>Shaheryar's</span> Blog
+        <span
+          className='px-2 py-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-lg text-white'
+        >Shaheryar's</span> Blog
       </Link>
 
       <Navbar.Collapse>
@@ -38,8 +40,11 @@ export default function Header() {
             rightIcon={AiOutlineSearch}
             color='gray'
           />
-        <Button className='lg:hidden' color='gray' pill>
+        <Button className='lg:hidden mr-2' color='gray' pill>
           <AiOutlineSearch />
+        </Button>
+        <Button className='ml-2' color='gray'>
+          Sign In
         </Button>
         
       </div>
