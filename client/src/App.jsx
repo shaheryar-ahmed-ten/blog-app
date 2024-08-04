@@ -9,6 +9,7 @@ import SignIn from './pages/SignIn'
 import SignOut from './pages/SignOut'
 import Dashboard from './pages/Dashboard'
 import About from './pages/About'
+import Projects from './pages/Projects'
 import Header from './components/Header'
 
 function App() {
@@ -16,9 +17,13 @@ function App() {
 
   return (
     <BrowserRouter>
+      <Header />
       <Routes>
         <Route path='/' element={<Home />}>Home</Route>
         <Route path='/about' element={<About />}>About</Route>
+        <Route path='/projects' element={<Projects />}>Projects</Route>
+        <Route path='/sign-in' element={<SignIn />}>SignIn</Route>
+        <Route path='/sign-out' element={<SignOut />}>SignOut</Route>
       </Routes>
       </BrowserRouter>
 
