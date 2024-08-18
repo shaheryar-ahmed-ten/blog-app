@@ -4,6 +4,7 @@ const dotenv = require('dotenv');
 const userRouter = require('./routes/user.route');
 const authRouter = require('./routes/auth.route');
 var cors = require('cors')
+const path = require("path");
 
 const app = express();
 dotenv.config();
@@ -20,6 +21,8 @@ mongoose.connect(process.env.MONGO_URI, {
     console.log("err connecting to Mongo err",err)
 })
 
+const __dirname = path.resolve()
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT,()=>{
     console.log('server listening to port '+ PORT)
@@ -27,6 +30,12 @@ app.listen(PORT,()=>{
 
 app.use('/api/user',userRouter);
 app.use('/api/auth', authRouter);
+
+app.use(express.static(path.join(__dirname,'client/dist')))
+
+app.get('*',(req,res) => {
+    res.sendFile(path.join(__dirname,'client','dist','index.html'))
+})
 
 app.use((err,req,res,next)=>{
     const statusCode = err.statusCode || 500;
