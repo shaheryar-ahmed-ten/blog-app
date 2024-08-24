@@ -9,7 +9,11 @@ const app = express();
 dotenv.config();
 
 app.use(express.json());
-app.use(cors())
+app.use(cors({
+    origin:['https://blog-app-fawn-ten.vercel.app'],
+    methods:['POST','GET','PUT','DELETE'],
+    credentials: true
+}))
 
 mongoose.connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
