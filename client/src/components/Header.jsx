@@ -1,11 +1,18 @@
 import React from 'react'
 import { Button, Navbar, TextInput } from "flowbite-react";
-import { Link,useLocation } from 'react-router-dom'
+import { Link,useLocation,useNavigate } from 'react-router-dom'
 import { AiOutlineSearch } from "react-icons/ai";
 import { FaMoon } from "react-icons/fa";
 
 
 export default function Header() {
+
+  const navigate = useNavigate()
+
+  const handleSignInClick = () => {
+    navigate('/sign-up'); // Redirect to /sign-in route
+  }
+
   const path = useLocation().pathname
   return (
     <Navbar className='border-b-2'>
@@ -43,7 +50,7 @@ export default function Header() {
         <Button className='lg:hidden mr-2' color='gray' pill>
           <AiOutlineSearch />
         </Button>
-        <Button className='ml-2' color='gray'>
+        <Button className='ml-2' color='gray' onClick={handleSignInClick}>
           Sign In
         </Button>
         
