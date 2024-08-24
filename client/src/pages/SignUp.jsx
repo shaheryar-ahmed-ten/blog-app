@@ -17,7 +17,7 @@ export default function SignUp() {
   }
 
   async function handleSubmit(e){
-    e.preventDefault()
+    e.preventDefault();
 
     const res = await fetch("blog-app-server-roan.vercel.app/api/auth/sign-up",{
       headers: {
