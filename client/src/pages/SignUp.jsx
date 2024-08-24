@@ -19,7 +19,7 @@ export default function SignUp() {
   async function handleSubmit(e){
     e.preventDefault()
 
-    const res = await fetch("http://localhost:3000/api/auth/sign-up",{
+    const res = await fetch("blog-app-server-roan.vercel.app/api/auth/sign-up",{
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
