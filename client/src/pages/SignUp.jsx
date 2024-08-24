@@ -52,7 +52,7 @@ export default function SignUp() {
       </div>
       <div>
         <div className="mb-2 block">
-          <Label htmlFor="email" value="Your email" />
+          <Label htmlFor="email" value="Your email"/>
         </div>
         <TextInput id="email" type="email" placeholder="name@flowbite.com" required shadow  onChange={handleChange}/>
       </div>
