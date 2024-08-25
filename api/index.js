@@ -23,6 +23,7 @@ mongoose.connect(process.env.MONGO_URI, {
 }).catch(err => {
     console.log("err connecting to Mongo err",err)
 })
+app.get("/", (req, res) => res.send("Express on Vercel"));
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT,()=>{
