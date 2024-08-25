@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon api/index.js",
-    "build": "npm install && nodemon api/index.js"
+    "build": "pm2 start api/index.js"
   },
   "repository": {
     "type": "git",
